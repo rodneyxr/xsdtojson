@@ -1,5 +1,13 @@
 # XSD To JSON Schema
 
+## Quickstart
+
+```bash
+pip install -U uv
+uv sync
+uv run xsdtojson ./schema.xsd > schema.json
+```
+
 ### Transforming XSD files into JSON Schema
 
 Python script that converts XSD files into [JSON Schema](http://json-schema.org/).  

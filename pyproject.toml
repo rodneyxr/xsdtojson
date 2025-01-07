@@ -1,0 +1,28 @@
+[project]
+name = "xsdtojson"
+version = "0.1.0"
+description = "Convert XSD to JSON Schema"
+authors = [{ name = "Ben Scott", email = "ben@benscott.co.uk" }]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "click>=8.1.8",
+    "lxml>=5.3.0",
+    "pygments>=2.19.0",
+    "simplejson>=3.19.3",
+]
+
+[project.scripts]
+xsdtojson = "xsdtojson.__main__:main"
+
+[tool.uv]
+package = true
+
+[tool.uv.sources]
+xsdtojson = { workspace = true }
+
+[tool.setuptools]
+py-modules = ["xsdtojson"]
+
+[dependency-groups]
+dev = ["jsonschema>=4.23.0"]
