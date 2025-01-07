@@ -6,7 +6,8 @@ Created by Ben Scott on '25/01/2017'.
 import simplejson as json
 from lxml import etree
 from collections import OrderedDict
-from distutils.util import strtobool
+from xsdtojson.utils import strtobool
+
 
 
 class XSDParser:
@@ -58,6 +59,8 @@ class XSDParser:
 
         # If element has an extension base, set properties to those of the extension
         if element_base:
+            # Split by `:` and get the last element
+            element_base = element_base.split(':')[-1]
             schema.update(self.type_extensions[element_base])
         # If this element has a name, add it to the schema tree
         elif element_name:
